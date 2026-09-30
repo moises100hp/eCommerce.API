@@ -1,4 +1,3 @@
-using eCommerce.API.Data;
 using eCommerce.API.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);

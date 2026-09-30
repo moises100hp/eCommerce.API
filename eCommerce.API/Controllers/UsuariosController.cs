@@ -1,5 +1,6 @@
 ﻿using eCommerce.API.Models;
 using eCommerce.API.Repositories;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace eCommerce.API.Controllers
@@ -37,7 +38,7 @@ namespace eCommerce.API.Controllers
         {
             _repository.Insert(usuario);
 
-            return Created();
+            return Ok(usuario);
         }
 
         [HttpPut]
@@ -51,6 +52,8 @@ namespace eCommerce.API.Controllers
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
         {
+            _repository.Delete(id);
+
             return Ok();
         }
     }
